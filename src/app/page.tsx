@@ -4,25 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Home() {
   return (
-    <div className="min-h-screen p-4 md:p-8">
-      {/* Рисованные таблички сверху */}
-      <div className="flex justify-center mb-8">
-        <div className="flex gap-4 flex-wrap justify-center">
-          <div className="bg-rose-300 px-4 py-2 rotate-neg-2 sketch-border hand-drawn-card sketch-shadow text-rose-700">
-            <span className="font-bold text-sm">РЕЦЕПТЫ</span>
-          </div>
-          <div className="bg-amber-300 px-4 py-2 rotate-1 sketch-border hand-drawn-card sketch-shadow text-amber-700">
-            <span className="font-bold text-sm">ПОИСК</span>
-          </div>
-          <div className="bg-teal-300 px-4 py-2 rotate-neg-1 sketch-border hand-drawn-card sketch-shadow text-teal-700">
-            <span className="font-bold text-sm">КУХНЯ</span>
-          </div>
-          <div className="bg-purple-300 px-4 py-2 rotate-2 sketch-border hand-drawn-card sketch-shadow text-purple-700">
-            <span className="font-bold text-sm">БЛЮДА</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen p-4 md:p-8 flex flex-col justify-center">
       {/* Главный заголовок */}
       <div className="text-center mb-12">
         <h1 className="text-5xl md:text-7xl font-bold text-amber-700 mb-4 wobble" style={{color: '#8b6914'}}>
@@ -32,7 +14,7 @@ export default function Home() {
       </div>
       
       {/* Основная карточка поиска */}
-      <div className="max-w-2xl mx-auto mb-12">
+      <div className="max-w-3xl mx-auto mb-12 w-full">
         <div className="sketch-border-card sketch-shadow p-8 rounded-2xl rotate-neg-1 bg-green-200" style={{background: 'linear-gradient(135deg, #d1f2d9 0%, #e8f7ec 50%, #f4fbf6 100%)'}}>
           <div className="text-center mb-8">
             <h2 className="text-3xl text-green-800 font-bold rotate-1">
