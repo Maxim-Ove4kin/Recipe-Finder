@@ -84,7 +84,7 @@ export default function Home() {
         <div className="sketch-border-card sketch-shadow p-6 rounded-xl rotate-1 hover:rotate-0 transition-transform" style={{backgroundColor: '#c7d9f1', background: 'linear-gradient(135deg, #c7d9f1 0%, #e1ecf7 100%)'}}>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-blue-800 mb-2 wavy-underline">🧑‍🍳 Шеф-повар</h3>
-            <p className="text-blue-700">Профессиональные рецепты от лучших поваров</p>
+            <p className="text-blue-700">Лучшие рецепты от нашего сообщества</p>
           </div>
         </div>
         
@@ -95,10 +95,10 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="sketch-border-card sketch-shadow p-6 rounded-xl rotate-2 hover:rotate-0 transition-transform" style={{backgroundColor: '#c0eee0', background: 'linear-gradient(135deg, #c0eee0 0%, #d9f4ed 100%)'}}>
+        <div className="sketch-border-card sketch-shadow p-6 rounded-xl rotate-2 hover:rotate-0 transition-transform" style={{backgroundColor: '#e1c7f2', background: 'linear-gradient(135deg, #e1c7f2 0%, #f7e1f7 100%)'}}>
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-teal-800 mb-2 wavy-underline">📱 Быстро</h3>
-            <p className="text-teal-700">Мгновенный поиск по ингредиентам</p>
+            <h3 className="text-2xl font-bold text-purple-800 mb-2 wavy-underline">🌟 Избранное</h3>
+            <p className="text-purple-700">Ваши сохраненные рецепты для быстрого доступа</p>
           </div>
         </div>
       </div>

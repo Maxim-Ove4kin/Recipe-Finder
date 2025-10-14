@@ -57,6 +57,15 @@ Create an intuitive, hand-drawn style recipe discovery platform that allows user
 - **Layout**: Clean, intuitive layout with sketch borders
 - **Animations**: Subtle rotations and hover effects
 
+### 5.3 Homepage Features
+The homepage includes three key feature cards that highlight different aspects of the Recipe Finder platform:
+
+1. **🧑‍🍳 Шеф-повар (Chef/Cook)**: Showcases "Лучшие рецепты от нашего сообщества" (Best recipes from our community) - highlighting community-curated content
+2. **🍰 Наши блюда (Our Dishes)**: Displays "Более 1000 проверенных рецептов" (Over 1000 verified recipes) - emphasizing the breadth of the recipe collection
+3. **🌟 Избранное (Favorites)**: Features "Ваши сохраненные рецепты для быстрого доступа" (Your saved recipes for quick access) - focusing on personalization and user preferences
+
+Each card features a unique color scheme, sketch-style borders, and subtle rotation animations on hover to create an engaging hand-drawn aesthetic.
+
 ## 6. Success Metrics
 - **User Engagement**: Time spent on site
 - **Search Success Rate**: Percentage of successful recipe discoveries
