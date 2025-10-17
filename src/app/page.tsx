@@ -1,8 +1,13 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
 
 export default function Home() {
+  const [searchType, setSearchType] = useState<'dish' | 'ingredients'>('dish')
+  
   return (
     <div className="min-h-screen p-4 md:p-8 flex flex-col justify-center">
       {/* Главный заголовок */}
@@ -24,31 +29,49 @@ export default function Home() {
           </div>
           
           <div className="space-y-6">
-            <div className="rotate-0-5">
-              <label className="block text-lg font-bold text-green-700 mb-3 rotate-neg-0-5 wavy-underline">
-                🍽️ Поиск по названию блюда
-              </label>
-              <div className="sketch-border-card bg-white/90 rounded-xl">
-                <Input 
-                  placeholder="Например: борщ, плов, салат цезарь..."
-                  className="w-full text-lg p-4 border-0 bg-transparent backdrop-blur-sm rotate-0-5 focus:rotate-0 transition-transform"
-                  style={{outline: 'none', boxShadow: 'none'}}
-                />
+            {/* Кнопка переключения поиска */}
+            <div className="flex justify-center mb-4">
+              <div className="sketch-border-button bg-blue-400 rounded-xl inline-block">
+                <button 
+                  className="text-lg px-6 py-3 bg-transparent hover:bg-blue-500/20 text-blue-900 font-bold border-0 rotate-1 hover:rotate-0 transition-all duration-300 rounded-xl"
+                  onClick={() => setSearchType(searchType === 'dish' ? 'ingredients' : 'dish')}
+                >
+                  {searchType === 'dish' ? '🥕 Переключить на поиск по ингредиентам' : '🍽️ Переключить на поиск по названию'}
+                </button>
               </div>
             </div>
             
-            <div className="rotate-neg-0-5">
-              <label className="block text-lg font-bold text-green-700 mb-3 rotate-0-5 wavy-underline">
-                🥕 Поиск по ингредиентам (через ;)
-              </label>
-              <div className="sketch-border-card bg-white/90 rounded-xl">
-                <Input 
-                  placeholder="Например: морковь; капуста; лук; мясо"
-                  className="w-full text-lg p-4 border-0 bg-transparent backdrop-blur-sm rotate-neg-0-5 focus:rotate-0 transition-transform"
-                  style={{outline: 'none', boxShadow: 'none'}}
-                />
+            {/* Поиск по названию блюда */}
+            {searchType === 'dish' && (
+              <div className="rotate-0-5">
+                <label className="block text-lg font-bold text-green-700 mb-3 rotate-neg-0-5 wavy-underline">
+                  🍽️ Поиск по названию блюда
+                </label>
+                <div className="sketch-border-card bg-white/90 rounded-xl max-w-2xl mx-auto w-full">
+                  <Input 
+                    placeholder="Например: борщ, плов, салат цезарь..."
+                    className="w-full text-lg p-4 border-0 bg-transparent backdrop-blur-sm rotate-0-5 focus:rotate-0 transition-transform"
+                    style={{outline: 'none', boxShadow: 'none'}}
+                  />
+                </div>
               </div>
-            </div>
+            )}
+            
+            {/* Поиск по ингредиентам */}
+            {searchType === 'ingredients' && (
+              <div className="rotate-neg-0-5">
+                <label className="block text-lg font-bold text-green-700 mb-3 rotate-0-5 wavy-underline">
+                  🥕 Поиск по ингредиентам (через ;)
+                </label>
+                <div className="sketch-border-card bg-white/90 rounded-xl max-w-2xl mx-auto w-full">
+                  <Input 
+                    placeholder="Например: морковь; капуста; лук; мясо"
+                    className="w-full text-lg p-4 border-0 bg-transparent backdrop-blur-sm rotate-neg-0-5 focus:rotate-0 transition-transform"
+                    style={{outline: 'none', boxShadow: 'none'}}
+                  />
+                </div>
+              </div>
+            )}
             
             <div className="text-center pt-4">
               <div className="sketch-border-button bg-amber-400 rounded-xl inline-block">
