@@ -4,9 +4,19 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
   const [searchType, setSearchType] = useState<'dish' | 'ingredients'>('dish')
+  const [searchValue, setSearchValue] = useState('')
+  const router = useRouter()
+  
+  const handleSearch = () => {
+    // Сохраняем запрос в localStorage для передачи на страницу результатов
+    localStorage.setItem('searchQuery', searchValue || 'Пользовательский запрос')
+    // Переходим на страницу результатов
+    router.push('/results')
+  }
   
   return (
     <div className="min-h-screen p-4 md:p-8 flex flex-col justify-center">
@@ -49,9 +59,11 @@ export default function Home() {
                 </label>
                 <div className="sketch-border-card bg-white/90 rounded-xl max-w-2xl mx-auto w-full">
                   <Input 
-                    placeholder="Например: борщ, плов, салат цезарь..."
+                    placeholder="Например: салат цезарь"
                     className="w-full text-lg p-4 border-0 bg-transparent backdrop-blur-sm rotate-0-5 focus:rotate-0 transition-transform"
                     style={{outline: 'none', boxShadow: 'none'}}
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
                   />
                 </div>
               </div>
@@ -68,6 +80,8 @@ export default function Home() {
                     placeholder="Например: морковь; капуста; лук; мясо"
                     className="w-full text-lg p-4 border-0 bg-transparent backdrop-blur-sm rotate-neg-0-5 focus:rotate-0 transition-transform"
                     style={{outline: 'none', boxShadow: 'none'}}
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
                   />
                 </div>
               </div>
@@ -75,7 +89,10 @@ export default function Home() {
             
             <div className="text-center pt-4">
               <div className="sketch-border-button bg-amber-400 rounded-xl inline-block">
-                <button className="text-xl px-8 py-4 bg-transparent hover:bg-amber-500/20 text-amber-900 font-bold border-0 rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105 rounded-xl">
+                <button 
+                  className="text-xl px-8 py-4 bg-transparent hover:bg-amber-500/20 text-amber-900 font-bold border-0 rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105 rounded-xl"
+                  onClick={handleSearch}
+                >
                   🎯 Найти рецепты!
                 </button>
               </div>
